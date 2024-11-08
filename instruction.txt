@@ -1,0 +1,87 @@
+But the tabs are active tab or selected tab. the tabs should take whole width.
+When i click upload button it should be able to upload audio file, and if i click record button then i can be able to record voice clip, the button should indicate that recording with red color and microphone icos blinking.
+
+there are some other fields like title, patient name, patient age, visite date, once fill up all them then there should be a submit button right side of record button, once click submit button, then it should submit, before submit the uploaded audio or recorded audio should be converted to a text, the converted audio to text should have a summary of the audio to text and transcript also.
+
+in the left side should have the list of submitted each record, once click any box of the left side listed then it should show in the right side content like patient name, patient age, visite date and summary in the summary tab and transcript in the transcript tab and the audio in the files tab. if click the plus icon in the top left side then the content should be blank in the right side, like patient name, patient age, visite date, summary etc so i can add new record.
+
+the left side should be more responsive so i can use for my mobile devices also and the right side also needs to be responsive.
+
+
+### === Second
+
+
+I need to add some more features and functionalties.
+
+01--> when i try to upload an audio or record an audio, i see this error (onAudioCapture is not a function).
+
+02--> for the record audio, the record audio button should be click, not hold to press, and when click to record then there should be 2 button, one is pause the record and another is stop the record, if click the pause record button then there will be repause button, so the audio can record from the pause.
+
+03--> right now there is not button if i want to edit any record, and when i try to add new record, i clicked the save changes button but the this error (onSave is not a function) but it should be update or edit on the firebase database, in the below i will send you firebase authentication
+
+04--> in the left side sidebar, above the record list have a searchbox, when i write something on the searchbox, i see it's not showing the data record list based on the searchbox, if the searchbox is empty then show all records.
+
+05--> I see it's not properly responsive for mobile devices and tablet devices, maybe you can add a little button for mobile and table devices, so if you click on the button then it will appear a popup for the left sidebar to show on the mobile and desktop devices.
+
+06--> also make all the things are responsive for all devices.
+
+07--> when you click submit button to add a new record, then it should upload the audio in the firebase storage and get back the audio URL and then add all the data for that record in the firebase database.
+
+08--> Here i added some images, the first image, name is "login-register.png", here is the design how the login and register will look like, if not logged then show this popup with the login, also see a little link to register if need, in the register page can also have a small link to login, anyone can't use anything before login, and this login popup will show if not login. use firebase to login and register. for the login they can use their phone number or email address and password to login.
+
+09--> the second image name "audio-recording.png" for how the audio recording needs be look like when recording. and also it's functionalities.
+
+10--> the third image name "how-the-summary-need-to-be.png" the summary needs to be look, you will convert the audio to text and then need to be make a summary and a transcribe and add them to the database, but in this image you can see how the summary needs to be, make the summary in this formate, also it's own functionalities.
+
+11--> in the fourth image name "how-the-transcript-need-to-be.png" for how the transcript needs to be look like, make the transcript in this formate showed in this image, also it's own functionalities.
+
+12--> in the fifth image name "how-the-settings-need-to-be.png" for how the settings popup needs to be look like. in the header with doctor (user) name shows, add a settings icon, when click on this then show this settings popup with this design and functionalities.
+
+13--> in the files tab show the audio files added for the record and can be able to play it.
+and please make it functional
+
+please all the above 13 features I asked you.
+and please fixe all issues because i need to make this application live today.
+
+
+
+
+### === Third
+
+
+
+
+I need to add some more features.
+
+01--> Login register is good but one more thing, if i want i can log in using email or if i want to use the phone number to log in,
+
+02--> The settings popup design is not the same as the image i sent you. I need the same design. Also, for the settings, all functions and features need to work. I want to see whether microphone access is allowed or not, if not allowed then I can request to allow microphone access. Please check the image name "how-the-settings-need-to-be.png" for how the settings design need to be.
+
+03--> when I upload any audio then it doesn't show me that i uploaded the audio file, i see it's showing in the files tab.
+
+04--> for the recording, it's functions are working i think but the design is not what i asked you, please check the please check the image name "audio-recording.png" for how the recording design needs to be look like.
+
+07--> when i click to submit, nothing happened, but it should be  transcribe and give me summary and transcript and then upload that data with that user, so i can get that data record for that user.
+
+08--> no 7 features need for edit also.
+
+09--> no loading features in the website, for everything i need to loading features, like login, register, uploading audio, recording audio, submitting or editing the data record in the database.
+
+10--> the sidebar is not showing on the mobile devices when i click the menu button in the bottom left side. and i think it's not properly responsive.
+
+11--> in the top left side have name and position, that's should be dynamic for that user not static, you can collect it after login.
+
+12--> after submit the data record and uploaded on the database with all data for that user and also the audio then it should show automatically in the left side sidebar data record list.
+
+13--> also left side sidebar search should be works.
+
+14--> and please fix all necessary issues.
+
+also fixed all necessary typescript issues.
+
+15--> in the page.tsx page i see this error in the  tag
+
+Type '{ selectedRecord: PatientRecord | null; audioFile: File | null; onSave: (data: Partial) => Promise; }' is not assignable to type 'IntrinsicAttributes & MainContentProps'.
+Property 'onSave' does not exist on type 'IntrinsicAttributes & MainContentProps'.ts(2322)
+
+and please fix all these 15 issues and add these 15 features.
