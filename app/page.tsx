@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
 import { Header } from "@/components/Header";
 import { Sidebar } from "@/components/Sidebar";
 import { MainContent } from "@/components/MainContent";
@@ -18,12 +18,14 @@ import {
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 export default function Home() {
+  const sidebarRef = useRef<HTMLDivElement>(null);
   const [title, setTitle] = useState("");
   const [selectedRecord, setSelectedRecord] = useState<PatientRecord | null>(
     null
   );
   const [audioFile, setAudioFile] = useState<File | null>(null);
   const [isRecording, setIsRecording] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [showMobileSidebar, setShowMobileSidebar] = useState(false);
   const { user, loading } = useAuth();
 
@@ -147,6 +149,8 @@ export default function Home() {
   const handleSaveRecord = async (data: Partial<PatientRecord>) => {
     if (!user) return;
 
+    setIsSubmitting(true);
+
     try {
       // Step 1: Upload audio file to Firebase Storage if provided
       let audioUrl = selectedRecord?.audioUrl;
@@ -219,6 +223,7 @@ export default function Home() {
     } catch (error) {
       console.error("Error saving record:", error);
     }
+    setIsSubmitting(false);
   };
 
   if (loading) {
@@ -242,6 +247,7 @@ export default function Home() {
           />
           <div className="flex flex-1 overflow-hidden">
             <Sidebar
+              ref={sidebarRef} // Passing ref to Sidebar
               onRecordSelect={handleRecordSelect}
               onNewRecord={handleNewRecord}
               selectedRecord={selectedRecord}
@@ -252,6 +258,7 @@ export default function Home() {
               selectedRecord={selectedRecord}
               audioFile={audioFile}
               onSave={handleSaveRecord}
+              isSubmitting={isSubmitting}
             />
           </div>
         </div>

@@ -12,6 +12,7 @@ import {
   signInWithPhoneNumber,
   updateProfile,
   User,
+  signInWithCredential,
 } from "firebase/auth";
 import { app } from "@/lib/firebase";
 
@@ -91,7 +92,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const verifyPhoneCode = async (verificationId: string, code: string) => {
     const credential = PhoneAuthProvider.credential(verificationId, code);
-    await auth.signInWithCredential(credential);
+    await signInWithCredential(auth, credential);
   };
 
   const updateUserProfile = async (name: string, position: string) => {

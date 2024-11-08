@@ -80,3 +80,71 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Markdown Styling */
+.markdown {
+  @apply text-white text-base leading-relaxed;
+
+  /* Customize headers */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-2xl font-bold mt-4 mb-2;
+  }
+
+  /* Lists */
+  ul,
+  ol {
+    @apply pl-5 mt-2 mb-2;
+  }
+  li {
+    @apply list-inside;
+  }
+
+  /* Paragraphs */
+  p {
+    @apply mb-4;
+  }
+
+  /* Links */
+  a {
+    @apply text-blue-500 underline;
+  }
+
+  /* Code */
+  code {
+    @apply bg-gray-800 text-white px-1 py-0.5 rounded;
+  }
+}
+
+.markdown-custom h1 {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.markdown-custom h2 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.markdown-custom h3 {
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.markdown-custom p {
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+.markdown-custom ul {
+  padding-left: 20px;
+  list-style-type: decimal;
+  font-size: 14px;
+}
+
+.markdown-custom strong {
+  font-size: 14px;
+}

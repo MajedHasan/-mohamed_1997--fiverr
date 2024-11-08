@@ -12,13 +12,19 @@ import { format } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
 import { PatientRecord } from "@/types/patient";
 import { cn } from "@/lib/utils";
+import ReactMarkdown from "react-markdown";
 
 interface PatientInfoProps {
   selectedRecord: PatientRecord | null;
   onSave: (data: Partial<PatientRecord>) => void;
+  isSubmitting: Boolean;
 }
 
-export function PatientInfo({ selectedRecord, onSave }: PatientInfoProps) {
+export function PatientInfo({
+  selectedRecord,
+  onSave,
+  isSubmitting,
+}: PatientInfoProps) {
   const [patientName, setPatientName] = useState(selectedRecord?.name || "");
   const [patientAge, setPatientAge] = useState(
     selectedRecord?.patientAge || ""
@@ -116,14 +122,21 @@ export function PatientInfo({ selectedRecord, onSave }: PatientInfoProps) {
         </div>
       </div>
 
-      <div>{summary}</div>
+      <div className="prose prose-sm text-white bg-black p-4 rounded-md shadow-md markdown-custom">
+        <ReactMarkdown>{summary}</ReactMarkdown>
+      </div>
 
       <div className="flex justify-end mt-6">
         <Button
           className="bg-blue-500 hover:bg-blue-600"
           onClick={handleSubmit}
+          disabled={isSubmitting ? true : false}
         >
-          {selectedRecord ? "Update Record" : "Save Record"}
+          {isSubmitting
+            ? "Loading..."
+            : selectedRecord
+            ? "Update Record"
+            : "Save Record"}
         </Button>
       </div>
     </div>

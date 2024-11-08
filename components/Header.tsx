@@ -82,6 +82,7 @@ export function Header({
               onChange={(e) => onTitleChange(e.target.value)}
               className="bg-zinc-900 border-zinc-800 text-white"
               placeholder="Enter title"
+              id="title"
             />
           </div>
           <div className="flex items-center gap-2 w-full md:w-auto">

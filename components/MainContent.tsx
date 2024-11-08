@@ -9,12 +9,14 @@ interface MainContentProps {
   selectedRecord: PatientRecord | null;
   audioFile: File | null;
   onSave: (data: Partial<PatientRecord>) => Promise<void>;
+  isSubmitting: Boolean;
 }
 
 export function MainContent({
   selectedRecord,
   audioFile,
   onSave,
+  isSubmitting,
 }: MainContentProps) {
   const [audioUrl, setAudioUrl] = useState<string | null>(null);
 
@@ -54,7 +56,11 @@ export function MainContent({
           value="summary"
           className="p-4 m-0 h-[calc(100%-3rem)] overflow-auto"
         >
-          <PatientInfo selectedRecord={selectedRecord} onSave={onSave} />
+          <PatientInfo
+            selectedRecord={selectedRecord}
+            onSave={onSave}
+            isSubmitting={isSubmitting}
+          />
         </TabsContent>
 
         <TabsContent

@@ -51,7 +51,7 @@ export function PatientList({
   });
 
   return (
-    <div className="flex-1 overflow-auto">
+    <div className="flex-1 overflow-auto overflow-y-scroll h-full">
       {filteredRecords.map((record) => (
         <div
           key={record.id}

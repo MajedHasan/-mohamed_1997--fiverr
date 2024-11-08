@@ -26,6 +26,8 @@ const nextConfig = {
 
     return config;
   },
+  // Add this to support static export
+  // output: "export", // Static export option
 };
 
 module.exports = nextConfig;
